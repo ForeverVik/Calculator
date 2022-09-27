@@ -11,7 +11,7 @@ import java.text.DecimalFormat;
  * java Calculator.java [num1] [operator] [num2]
  * 
  * Example:
- * java Calculator 2 * 3
+ * java Calculator 2 + 3
  * 
  * The program will output the result to the console.
  */
@@ -191,7 +191,6 @@ public class Calculator {
                 case "-":
                     System.out.println(subtract(Float.parseFloat(args[0]), Float.parseFloat(args[2])));
                     break;
-                case "*":
                 case "x":
                     System.out.println(multiply(Float.parseFloat(args[0]), Float.parseFloat(args[2])));
                     break;
@@ -215,7 +214,7 @@ public class Calculator {
                         break;
                     }
                 default:
-                    System.out.println("ERROR: Invalid Operator. Valid operators are: +, -, *, /, ^, %.");
+                    System.out.println("ERROR: Invalid Operator. Valid operators are: +, -, x, /, ^, %.");
             }
             break;
         }
@@ -246,7 +245,6 @@ public class Calculator {
                 toString(nums[0], operator, nums[1], subtract(nums[0], nums[1]));
                 run=false;
                 continue;
-            case "*":
             case "x":
                 inputFloats();
                 toString(nums[0], operator, nums[1], multiply(nums[0], nums[1]));
@@ -274,7 +272,7 @@ public class Calculator {
                 run=false;
                 continue;
             default:
-                System.out.println("ERROR: Invalid Operator. Valid operators are: +, -, *, /, %, ^");
+                System.out.println("ERROR: Invalid Operator. Valid operators are: +, -, x, /, %, ^");
                 continue;
             }
         }
